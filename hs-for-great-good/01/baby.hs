@@ -8,3 +8,5 @@ doubleSmallNumber x = if x > 100
                       else x * 2
 
 doubleSmallNumberInline x = (if x > 100 then x else x*2) + 1
+
+strangeLen xs = sum [1 | _ <- xs]
