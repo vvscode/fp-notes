@@ -10,3 +10,5 @@ isPolindrom xs =
     in if (fst == lst)
     then (isPolindrom newXs)
     else False
+
+      
