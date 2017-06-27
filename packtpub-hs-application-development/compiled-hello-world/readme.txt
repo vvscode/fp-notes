@@ -1,0 +1,1 @@
+stack ghc -- -o ./compiled-hello-world/helloWorld ./hello-world/src/Main.hs
