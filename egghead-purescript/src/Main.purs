@@ -17,3 +17,7 @@ main = do
   log ""
   log "addFive 4"
   log $ show $ addFive 4
+
+  log ""
+  log "runFoo (Bar \"his buddy\")"
+  log $ show $ runFoo (Bar "his buddy")
