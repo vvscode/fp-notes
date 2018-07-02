@@ -17,3 +17,17 @@ data Foo = Foo1 | Bar String
 runFoo :: Foo -> String
 runFoo Foo1 = "Damn right it's Foo"
 runFoo (Bar s) = "Yeah it's Bar and " <> s
+
+-- Break up Expressions into Cases in PureScript 
+-- using Simple Pattern Matching
+nonSense :: Int -> Int -> Int
+nonSense n 0 = 0
+nonSense n _ = n
+
+whoIsGreater :: Int -> Int -> Int
+whoIsGreater n m | n > m = n
+                 | otherwise = m
+
+isEmpty :: forall a. Array a -> Boolean
+isEmpty [] = true
+isEmpty _ = false

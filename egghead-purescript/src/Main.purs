@@ -21,3 +21,14 @@ main = do
   log ""
   log "runFoo (Bar \"his buddy\")"
   log $ show $ runFoo (Bar "his buddy")
+
+  -- Break up Expressions into Cases in PureScript 
+  -- using Simple Pattern Matching
+  log $ show $ nonSense 12 0
+  log $ show $ nonSense 15 14
+
+  log $ show $ whoIsGreater 12 44
+
+  log $ show $ isEmpty []
+  log $ show $ isEmpty [1, 2]
+
