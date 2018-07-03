@@ -31,3 +31,14 @@ whoIsGreater n m | n > m = n
 isEmpty :: forall a. Array a -> Boolean
 isEmpty [] = true
 isEmpty _ = false
+
+-- Types Alias and Instances in PureScript
+type PersonRec = { name:: String
+                  ,age:: Int
+                }
+data Person = PersonA PersonRec
+instance  showPerson :: Show Person where
+  show (PersonA {name, age}) = "PersonA ({ name:"<> show name
+    <> ", age: " <> show age <> "})"
+whoAmI :: String -> Int -> Person
+whoAmI name age = PersonA { name, age }

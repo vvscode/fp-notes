@@ -32,3 +32,5 @@ main = do
   log $ show $ isEmpty []
   log $ show $ isEmpty [1, 2]
 
+  -- Types Alias and Instances in PureScript
+  log $ show $ whoAmI "Vasiliy" 18
