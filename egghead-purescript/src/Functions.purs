@@ -1,6 +1,9 @@
 module Functions where
 
 import Prelude
+import Data.Array (null)
+import Data.Array.Partial (tail)
+import Partial.Unsafe (unsafePartial)
 
 -- addMe (a -> ( b -> (a + b)))
 addMe :: Int -> Int -> Int
@@ -47,3 +50,10 @@ whoAmI name age = PersonA { name, age }
 fact:: Int -> Int
 fact 0 = 1
 fact n = n * fact (n -1)
+
+-- Creating your own length function using recursion in Purescript
+length :: forall a. Array a -> Int
+length arr = 
+  if null arr
+  then 0
+  else 1 + length(unsafePartial tail arr)

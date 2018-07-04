@@ -37,3 +37,6 @@ main = do
 
   -- Recursion in Purescript
   log $ show $ fact 10
+
+  -- Creating your own length function using recursion in Purescript
+  log $ show $ length [1, 2]
