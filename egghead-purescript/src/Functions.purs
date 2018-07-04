@@ -42,3 +42,8 @@ instance  showPerson :: Show Person where
     <> ", age: " <> show age <> "})"
 whoAmI :: String -> Int -> Person
 whoAmI name age = PersonA { name, age }
+
+-- Recursion in Purescript
+fact:: Int -> Int
+fact 0 = 1
+fact n = n * fact (n -1)

@@ -34,3 +34,6 @@ main = do
 
   -- Types Alias and Instances in PureScript
   log $ show $ whoAmI "Vasiliy" 18
+
+  -- Recursion in Purescript
+  log $ show $ fact 10
