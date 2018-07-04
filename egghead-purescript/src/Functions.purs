@@ -53,7 +53,9 @@ fact n = n * fact (n -1)
 
 -- Creating your own length function using recursion in Purescript
 length :: forall a. Array a -> Int
-length arr = 
-  if null arr
-  then 0
-  else 1 + length(unsafePartial tail arr)
+-- length arr = 
+--   if null arr
+--   then 0
+--   else 1 + length(unsafePartial tail arr)
+length [] = 0
+length arr = 1 + length (unsafePartial tail arr)
