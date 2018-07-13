@@ -2,6 +2,7 @@ module Functions where
 
 import Prelude
 import Data.Array (null)
+import Data.List ((:), List(..))
 import Data.Array.Partial (tail)
 import Partial.Unsafe (unsafePartial)
 
@@ -86,3 +87,7 @@ showVehicle (Bicycle a) = "Vehicle: Bicycle, " <> show a
 
 showWheels :: Wheels -> String
 showWheels (Wheels a) = "Wheels: " <> show a
+
+-- Lists and Infix operators in PureScript
+myIntList :: List Int
+myIntList = (Cons 1 (Cons 2 (Cons 3 Nil)))

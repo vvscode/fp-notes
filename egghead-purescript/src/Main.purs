@@ -41,7 +41,11 @@ main = do
   -- Creating your own length function using recursion in Purescript
   log $ show $ length [1, 2]
 
+  -- Aglebraic data type in PS and show instance
   -- log $ showWheels  (Wheels 4)
   -- log $ (Wheels 4)
   log $ show $ myVehicle
   log $ show $ (Wheels 4)
+
+  -- Lists and Infix operators in PureScript
+  log $ show $ myIntList
