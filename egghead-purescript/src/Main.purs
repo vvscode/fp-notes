@@ -57,3 +57,6 @@ main = do
 
   logShow $ mapCompList
   logShow $ mapCompList'
+
+  -- Filter in PureScript
+  logShow $ filter' (_ <= 2) myIntList

@@ -2,7 +2,7 @@ module Functions where
 
 import Prelude
 import Data.Array (null)
-import Data.List ((:), List(..))
+import Data.List ((:), List(..), reverse)
 import Data.Array.Partial (tail)
 import Partial.Unsafe (unsafePartial)
 
@@ -106,3 +106,17 @@ mapCompList = map ((\a -> a + 2) <<< (\a -> a + 1)) myIntList
 
 mapCompList' :: List Int
 mapCompList' = (map (_ + 2) <<< map (_ + 1)) myIntList
+
+-- Filter in PureScript
+filter' :: forall a. (a -> Boolean) -> List a -> List a
+filter' p l = go Nil l
+  -- go (Nil) (1 : 2 : Nil)
+  where
+  go acc Nil = reverse acc
+  -- go (Nil : 1) Nil = reverse (Nil :1) = (1 :Nil)
+  go acc (x : xs)
+  -- x = (2), xs = (Nil)
+    | p x = go (x : acc) xs
+    -- (2 < 2) = go (1 : Nil) (2 : Nil)
+    | otherwise = go acc xs
+    -- go (Nil : 1) (Nil)
