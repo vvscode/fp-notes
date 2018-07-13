@@ -6,6 +6,8 @@ import Effect.Console (log)
 
 import Functions
 
+logShow x = log $ show $ x
+
 main :: Effect Unit
 main = do
   log "Hello sailor!"
@@ -49,3 +51,9 @@ main = do
 
   -- Lists and Infix operators in PureScript
   log $ show $ myIntList
+  log $ show $ map' (\a -> a + 1) myIntList
+  log $ show $ map (\a -> a + 1) [1, 2, 3]
+  log $ show $ mapIdList
+
+  logShow $ mapCompList
+  logShow $ mapCompList'
